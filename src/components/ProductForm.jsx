@@ -11,7 +11,7 @@ const ProductFormPage = ({ platform }) => {
 
   const generateCoupon = async () => {
     try {
-      const response = await axios.post('http://localhost:3000/api/generate-coupon', { source: platform });
+      const response = await axios.post('https://test2-yoi7.onrender.com/api/generate-coupon', { source: platform });
       setToken(response.data.token);
     } catch (error) {
       console.error('Error generating coupon:', error);
@@ -20,7 +20,7 @@ const ProductFormPage = ({ platform }) => {
 
   const redeemCoupon = async () => {
     try { 
-      const response = await axios.post('http://localhost:3000/api/redeem-coupon', { token });
+      const response = await axios.post('https://test2-yoi7.onrender.com/api/redeem-coupon', { token });
       if (response.data.success) {
         setRedeemMessage('Coupon redeemed successfully!');
       } else {
